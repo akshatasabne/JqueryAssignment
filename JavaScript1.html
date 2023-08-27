@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--<script></script>
+        //var a = 20;
+        //let b = 10;
+        //const pi = 3.14;
+
+        //var name1 = "Akshata";
+        //var isAdmin = true;
+        //var salary = 4561.25;
+        //var id = 101;
+
+        //document.write("My name is" + name1);
+
+        //console.log(name1);
+        //for (var i = 0; i <= 10; i++)
+        //{
+        //    document.write("</br>" + i);
+        //}
+
+        //function Addition(a, b) {
+        //    var c = a + b;
+        //    document.write("</br>"+c);
+        //}
+        //Addition(10, 20);
+
+        //function Subtraction() {
+        //    var a = 30, b = 10;
+        //    var c = a - b;
+        //    document.write("</br>"+c);
+        //}
+        //Subtraction();
+
+        //function Multiply(a, b) {
+        //    var c = a * b;
+        //    return c;
+        //}
+        //var ans = Multiply(10, 20);
+        //document.write("</br>" + ans);
+
+        //function Division(a, b) {
+        //    var c = a / b;
+        //    return c;
+        //}
+        //var ans = Division(20,10);
+        //document.write("</br>" + ans);-->
+
+    <h4>
+        Enter number:<input type="text" id="t1" /><br />
+        Enter number:<input type="text" id="t2" /><br />
+        result       :<input type="text" id="t3" />
+    </h4><br />
+
+    <input type="button" value="Add" onclick="Addition()" />
+    <input type="button" value="sub" onclick="Subtraction()" />
+    <input type="button" value="Multi" onclick="Multiply()" />
+    <input type="button" value="Division" onclick="Division()" />
+    <input type="button" value="Clear" onclick="ClearData()" />
+    <br />
+    <div id="d1">
+        <!--<p id="p1"></p>
+        <h4 id=" h1"></h4>
+        <b id="b1"></b>-->
+    </div>
+    <script>
+
+        function Addition() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var sum = parseInt(a) + parseInt(b);
+            document.getElementById("t3").value = sum;
+            document.getElementById("d1").innerHTML = "sum is" + sum;
+
+        }
+        function Subtraction() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var sub = parseInt(a) - parseInt(b);
+            document.getElementById("t3").value = sub;
+            document.getElementById("d1").innerHTML = "Sub is" + sub;
+        }
+        function Multiply() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var Mul = parseInt(a) * parseInt(b);
+            document.getElementById("t3").value = Mul;
+            document.getElementById("d1").innerHTML = "Multilpy is" + Mul;
+
+        }
+        function Division() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var div = parseInt(a) / parseInt(b);
+            document.getElementById("t3").value = div;
+            document.getElementById("d1").innerHTML = "Division is" + div;
+
+        }
+        function ClearData() {
+            var res = confirm("Do you want clear");
+            if (res == true) {
+                document.getElementById("t1").value = "";
+                document.getElementById("t2").value = "";
+                document.getElementById("t3").value = "";
+
+            }
+        }
+        var num = [10, 20, 30, 40, 50, 60];
+
+        num.push(70);
+        num.unshift(0);
+
+        num.pop();
+        num.shift();
+
+        num.slice(1, 1, 80, 90);
+        num.sort();
+        num.reverse();
+        document.write(num);
+        var list = num.slice(2, 5);//skip 2 and print 3 to 5
+        for (var i = 0; i < num.length; i++) {
+            document.write("</br>" + num[i]);
+        }
+         document.write("/br>"---------);
+        document.write("</br>" + list);
+
+        var name1 = ["a", "b", "c", "d"];
+        name1.push("e");//add element at last
+        name1.unshift("z");//add element at first
+
+        name1.pop();//remove last element
+        name1.shift();//remove first element
+
+        name1.splice(1, 1, "p", "q");//1-start 1-remove and add that place p and q
+        name1.sort();
+        name1.reverse();//q p d c a
+        var list1 = name1.slice(1, 4);//display from 1 to four elemnt ie.=p d c
+        for (var i = 0; i < name1.length; i++) {
+            document.write("</br>" + name1[i]);
+        }
+        document.write("</br>" + list1);
+        
+        
+    </script>
+</body>
+</html>

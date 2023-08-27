@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="d1"></div>
+    <script>
+        var student = [
+            { rollno: 1, name: "Akshata", marks: 70 },
+            { rollno: 2, name: "Vidya", marks: 80 },
+            { rollno: 2, name: "Anjali", marks: 90 },
+            { rollno: 4, name: "Snehal", marks: 75 },
+            { rollno: 5, name: "Neha", marks: 72 },
+
+
+
+        ];
+        var data = "<table border = '2'><tr><td>rollno</td><td>name</td><td>marks</td></tr>";
+        for (var i = 0; i < student.length; i++) {
+            data += "<tr><td>" + student[i].rollno + "</td><td>" + student[i].name +
+                "</td><td>" + student[i].marks + "</td></tr>";
+        }
+        data += "</table>";
+        document.getElementById("d1").innerHTML = data;
+
+        
+    </script>
+</body>
+</html>

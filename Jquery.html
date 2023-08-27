@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <!--<h4>
+        Enter number:<input type="text" id="t1" /><br />
+        Enter number:<input type="text" id="t2" /><br />
+        result       :<input type="text" id="t3" />
+    </h4><br />-->
+    <input type="button" id="btn1" value="GET" />
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <d1 id="d1"></d1>
+    <!--<d1 id="d2"></d1>-->
+
+    <!--<div>
+        I am akshata sabne
+    </div>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            //$("#btn2").click(function () {
+            //    $("div").hide();
+            //});
+            //$("#btn1").click(function () {
+            //    $("div").show();
+            //});
+            $("#btn1").click(function () {
+                //var a = $("#t1").val();
+                //var b = $("#t2").val();
+                //var sum = parseInt(a) + parseInt(b);
+                //$("#t3").val(sum);
+                //$("#d1").text("Addition is" + sum);
+                //$("#d2").html("<b>Addition is" + sum + "</b>");
+
+                $.ajax('https://dummyjson.com/products/1',
+                    {
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (value) {
+                            var data = "<tr><td>" + result.id + "</td><td>" + result.title + "</td><td>" +
+                                result.description + "</td><td>" + result.price +
+                                "</td><td><img src='" + result.thumbnail + "' height='200' width='300'/></td></tr>";
+
+                            data += "</table>";
+                            $("#d1").html(data);
+
+
+                        },
+                        error: function (error) {
+                            $("#d1").text("server error" + error);
+                        }
+
+                    }
+
+                )
+            }
+
+            );
+        }
+    </script>
+</body>
+</html>
